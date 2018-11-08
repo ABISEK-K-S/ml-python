@@ -1,22 +1,18 @@
 
-# coding: utf-8
-
-# In[2]:
-
 
 import sys
 import operator
 
 
-def print_words(fname):
-    wc= count_(fname)
+def print_words(filename):
+    wc= count_(filename)
     for key in sorted(wc):
      print( "%s: %s" % (key, wc[key]))
     
     
-def count_(fname):    
+def count_(filename):    
 
-    text= open(fname)
+    text= open(filename)
     w_dic= text.read().lower().split()
     w_c= {}
     for w in w_dic:
@@ -30,8 +26,8 @@ def count_(fname):
   
 
 
-def print_top(fname):
-    wc= count_(fname)
+def print_top(filename):
+    wc= count_(filename)
     s = sorted(wc.items(), key=operator.itemgetter(1),reverse=True)
    
     for key in range(20):
